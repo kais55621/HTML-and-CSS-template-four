@@ -567,7 +567,7 @@ ul {
     transition: 0.3s;
 }
 .settings-page .button:hover {
-    background-color: var(--blue-alt-color);
+    background-color:#ddd;
 }
 /* social */
 .social-box i {
