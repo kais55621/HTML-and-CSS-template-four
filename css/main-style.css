@@ -827,10 +827,7 @@ input[type="radio"] {
     margin-left: auto;
     text-align: right;
 }
-@media (max-width:767px)  { 
-    .profile-page .other-data .latest-activities {
-        text-align: center;
-    }   
+@media (max-width:767px)  {  
     .profile-page .other-data .latest-activities .box img  {
         margin: 0 0 10px;
     }
