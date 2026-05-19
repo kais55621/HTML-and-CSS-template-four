@@ -570,7 +570,7 @@ ul {
     background-color:#ddd;
 }
 /* social */
-.social-box i {
+.settings-page .social-box i {
     background-color: #f6f6f6;
     height: 40px;
     width: 40px;
@@ -578,7 +578,7 @@ ul {
     border: 1px solid #ddd;
     transition: 0.3s;
 }
-.social-box input {
+.settings-page .social-box input {
     padding-left: 10px;
     background-color: #f6f6f6;
     border: #ddd;
@@ -587,37 +587,37 @@ ul {
     border: 1px solid #ddd;
     border-left: none;
 }
-.social-box > div:focus-within i {
+.settings-page .social-box > div:focus-within i {
     color: black;
 }
 /* widgets control */
-.widgets-control-box input[type="checkbox"] {
+.settings-page .widgets-control-box input[type="checkbox"] {
     -webkit-appearance:none ;
     appearance: none;
 }
-.widgets-control-box label {
+.settings-page .widgets-control-box label {
     position: relative;
     padding-left: 26px;
     cursor: pointer;
 }
-.widgets-control-box label::before ,
-.widgets-control-box label::after {
+.settings-page .widgets-control-box label::before ,
+.settings-page .widgets-control-box label::after {
     position: absolute;
     left: 0;
     top: 50%;
     border-radius:4px ;
     margin-top: -9px;
 }
-.widgets-control-box label::before {
+.settings-page .widgets-control-box label::before {
     content: "";
     width: 14px;
     height: 14px;
     border:2px solid var(--gray-color) ;
 }
-.widgets-control-box label:hover::before {
+.settings-page .widgets-control-box label:hover::before {
     border-color: var(--blue-alt-color);
 }
-.widgets-control-box label::after {
+.settings-page .widgets-control-box label::after {
     font-family: var(--fa-style-family-classic);
     content: "\f00c";
     font-weight: 900;
@@ -632,26 +632,26 @@ ul {
     transform: scale(0);
     transition: 0.3s;
 }
-.widgets-control-box input[type=checkbox]:checked + label::after {
+.settings-page .widgets-control-box input[type=checkbox]:checked + label::after {
     transform: scale(1);
 }
 /* date */
-input[type="radio"] {
+.settings-page input[type="radio"] {
     -webkit-appearance:none ;
     appearance: none;
 }
-.date label {
+.settings-page .date label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
 }
-.date label::before ,
-.date label::after {
+.settings-page .date label::before ,
+.settings-page .date label::after {
     position: absolute;
     border-radius:50% ;
     top: 50%;
 }
-.date label::before {
+.settings-page .date label::before {
     content: "";
     margin-top: -11px;
     left: 0;
@@ -659,10 +659,10 @@ input[type="radio"] {
     height: 18px;
     border:2px solid var(--gray-color) ;
 }
-.date label:hover::before {
+.settings-page .date label:hover::before {
     border-color: var(--blue-alt-color);
 }
-.date label::after {
+.settings-page .date label::after {
     content: "";
     left: 5px;
     margin-top: -6px;
@@ -673,23 +673,23 @@ input[type="radio"] {
     transform: scale(0);
     transition: 0.3s;
 }
-.date input[type=radio]:checked + label::before {
+.settings-page .date input[type=radio]:checked + label::before {
     border-color: var(--blue-color);
 }
-.date input[type=radio]:checked + label::after {
+.settings-page .date input[type=radio]:checked + label::after {
     transform: scale(1);
 }
 /* servers */
-.servers label {
+.settings-page .servers label {
     cursor: pointer;
 }
-.servers i {
+.settings-page .servers i {
     margin: 0 auto 10px;
 }
-.servers input[type=radio]:checked + .server > label {
+.settings-page .servers input[type=radio]:checked + .server > label {
     color: var(--blue-color);
 }
-.servers input[type=radio]:checked + .server {
+.settings-page .servers input[type=radio]:checked + .server {
     border-color: var(--blue-color);
 }
 /* toggle */
@@ -774,9 +774,6 @@ input[type="radio"] {
 .profile-page .overview .info-box .box:hover {
     background-color: #f9f9f9;
 }
-.profile-page .overview .info-box h4 {
-    font-weight:normal ;
-}
 .profile-page .overview .info-box .toggle-switch {
     height: 20px;
 }
@@ -837,6 +834,79 @@ input[type="radio"] {
     }
 }
 /* End Profile */
+/* Start Project */
+.projects-page {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+@media (max-width:767px) {
+    .projects-page {
+        grid-template-columns:minmax(100px, 1fr);
+        gap:10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+.projects-page .project .date {
+    right: 10px;
+    top: 10px;
+}
+.projects-page .project .team {
+    min-height: 80px;
+    position: relative;
+}
+.projects-page .project .team a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.projects-page .project .team a:nth-child(2) {
+    left: 25px;
+}
+.projects-page .project .team a:nth-child(3) {
+    left: 50px;
+}
+.projects-page .project .team a:nth-child(4) {
+    left: 75px;
+}
+.projects-page .project .team a:nth-child(5) {
+    left: 100px;
+}
+.projects-page .project .team a:hover {
+    z-index: 1000;
+}
+.projects-page .project .team img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+}
+.projects-page .project .do {
+    justify-content: flex-end;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+.projects-page .project .info .progress {
+    height: 8px;
+    width: 260px;
+}
+@media (max-width:767px) {
+    .projects-page .project .info .progress {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:400px) {
+    .projects-page .project .info .progress {
+        width: 100%;
+    }
+}
+.projects-page .project .info .progress span {
+    left: 0;
+    top: 0;
+}
+.projects-page .project .info i {
+    margin-right: -5px;
+}
+/* End Project */
 /* Start Animation */
 @keyframes change-color {
     0% {
