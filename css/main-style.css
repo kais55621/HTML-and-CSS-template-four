@@ -1,9 +1,11 @@
 :root {
+    --main-transition:0.3s;
     --blue-color:#0075ff;
     --blue-alt-color:#0d69d5;
     --orange-color:#f59e0b;
     --green-color:#22c55e;
     --red-color:#f44336;
+    --red-alt-color:#df3f34;
     --gray-color:#888;
 }
 body {
@@ -72,7 +74,7 @@ ul {
     }
 }
 .sidebar ul li a {
-    transition: 0.3s;
+    transition: var(--main-transition);
     margin-bottom: 5px;
 }
 .sidebar ul li a:hover , 
@@ -114,7 +116,7 @@ ul {
     padding-left: 30px;
     margin-left: 5px;
     width: 160px;
-    transition: width 0.3s;
+    transition: width var(--main-transition);
 }
 .head .search input:focus {
     outline:auto ;
@@ -174,10 +176,15 @@ ul {
         gap: 10px;
     }
 }
-/* Start Welcome */
-.welcome {
-    overflow: hidden;
+@media (min-width:768px) {
+    .wrapper > div {
+        transition: var(--main-transition);
+    }
+    .wrapper > div:hover {
+        transform: scale(1.011);
+    }    
 }
+/* Start Welcome */
 .welcome .welcome-header img {
     width: 200px;
 }
@@ -221,7 +228,7 @@ ul {
 }
 .welcome a {
     margin: 0 15px 15px auto;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .welcome a:hover {
     background-color: var(--blue-alt-color);
@@ -235,7 +242,7 @@ ul {
 .quick input[type=submit] {
     margin-left: auto;
     cursor: pointer;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .quick input[type=submit]:hover {
     background-color: var(--blue-alt-color);
@@ -352,7 +359,7 @@ ul {
 }
 .tasks .tasks-row i {
     cursor: pointer;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .tasks .tasks-row i:hover {
     color: var(--red-color);
@@ -481,7 +488,7 @@ ul {
     left: 0;
     top: 0;
     width: 52px;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .social-stats .box i:hover {
     transform: rotate(5deg);
@@ -512,7 +519,7 @@ ul {
     border-spacing: 0;
 }
 .projects table tbody tr {
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .projects table tbody tr:hover  {
     background-color: #faf7f7;
@@ -527,7 +534,7 @@ ul {
 .projects table tbody td {
     border-bottom:1px  solid #eee;
     border-left:1px  solid #eee;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .projects table tbody td:last-child {
     border-right: 1px solid #eee;
@@ -564,9 +571,12 @@ ul {
     width: calc(100% - 80px);
 }
 .settings-page .button {
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
-.settings-page .button:hover {
+.settings-page .button.bg-blue:hover {
+    background-color:var(--blue-alt-color);
+}
+.settings-page .button.bg-eee:hover {
     background-color:#ddd;
 }
 /* social */
@@ -576,7 +586,7 @@ ul {
     width: 40px;
     border-radius: 6px 0 0 6px;
     border: 1px solid #ddd;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .settings-page .social-box input {
     padding-left: 10px;
@@ -630,7 +640,7 @@ ul {
     justify-content: center;
     align-items: center;
     transform: scale(0);
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .settings-page .widgets-control-box input[type=checkbox]:checked + label::after {
     transform: scale(1);
@@ -671,7 +681,7 @@ ul {
     width: 12px;
     height: 12px;
     transform: scale(0);
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .settings-page .date input[type=radio]:checked + label::before {
     border-color: var(--blue-color);
@@ -704,7 +714,7 @@ ul {
     height: 32px;
     border-radius: 16px;
     position: relative;
-    transition: 0.3s;
+    transition: var(--main-transition);
     cursor: pointer;
 }
 .toggle-switch::before {
@@ -722,7 +732,7 @@ ul {
     justify-content: center;
     align-items: center;
     color: #aaa;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .toggle-checkbox:checked + .toggle-switch {
     background-color: var(--blue-color);
@@ -752,7 +762,6 @@ ul {
     position: relative;
     height: 6px;
     width: 70%;
-    overflow: hidden;
     margin: auto;
 }
 .profile-page .overview .avatar-box .level span {
@@ -766,7 +775,7 @@ ul {
 }
 .profile-page .overview .info-box .box {
     flex-wrap: wrap;
-    transition: 0.3s;
+    transition: var(--main-transition);
 }
 .profile-page .overview .info-box .box > div {
     min-width: 250px;
@@ -846,6 +855,15 @@ ul {
         margin-right: 10px;
     }
 }
+@media (min-width:768px) {
+    .projects-page .project {
+        transition: var(--main-transition);
+    }
+    .projects-page .project:hover {
+        transform: scale(1.01);
+    }
+}
+
 .projects-page .project .date {
     right: 10px;
     top: 10px;
@@ -907,6 +925,183 @@ ul {
     margin-right: -5px;
 }
 /* End Project */
+/* Start Courses */
+.courses-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+@media (min-width:768px) {
+    .courses-page .course {
+        transition:var(--main-transition);
+    }
+    .courses-page .course:hover {
+        transform: scale(1.012);
+    }
+}
+.courses-page .course img.avatar {
+    width: 64px;
+    height: 64px;
+    left: 20px;
+    top: 20px;
+    border: 2px solid white;
+}
+.courses-page .course img.cover {
+    width: 100%;
+}
+.courses-page .course div p {
+    line-height: 1.6;
+}
+.courses-page .course div a {
+    font-size: 14px;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+}
+.courses-page .course div a:hover {
+    background-color: var(--blue-alt-color);
+}
+.courses-page .course .info div:last-of-type i {
+    margin-right: -6px;
+}
+/* End Courses */
+/* Start Friends */
+.friends-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+@media (min-width:768px) {
+    .friends-page .friend {
+        transition: var(--main-transition);
+    }
+    .friends-page .friend:hover {
+        transform: scale(1.012);
+    }    
+}
+.friends-page .friend .contact {
+    left: 10px;
+    top: 10px;
+}
+.friends-page .friend .contact i {
+    color: #666;
+    background: #eee;
+    font-size: 13px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.friends-page .friend .contact i:hover {
+    color: white;
+    background-color: var(--blue-color);
+}
+.friends-page .friend div img {
+    width: 100px;
+    height: 100px;
+}
+.friends-page .friend .icons i {
+    margin-right: 6px;
+}
+.friends-page .friend .icons .vip {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    opacity: 0.2;
+}
+.friends-page .friend .info a:first-of-type {
+    transition: var(--main-transition)
+}
+.friends-page .friend .info a:first-of-type:hover {
+    background-color: var(--blue-alt-color);
+}
+.friends-page .friend .info a:last-of-type {
+    transition: var(--main-transition)
+}
+.friends-page .friend .info a:last-of-type:hover {
+    background-color:#df3f34;
+}
+/* End Friends */
+/* Start Files */
+.files-page {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+@media (max-width:767px) {
+    .files-page {
+        flex-direction: column;
+        align-items:normal ;
+    }
+}
+.files-page .files-stats {
+    min-width: 260px;
+}
+@media (min-width:768px) {
+    .files-page .files-stats {
+        transition: var(--main-transition);
+    }
+    .files-page .files-stats:hover {
+        transform: scale(1.017);
+    }    
+}
+.files-page .files-stats .box i {
+    margin-right: 10px;
+}
+.files-page .files-stats .box i.blue {
+    background-color: rgba(0 117 255 / 20%);
+}
+.files-page .files-stats .box i.green {
+    background-color: rgb(34 197 94 / 20%);
+}
+.files-page .files-stats .box i.red {
+    background-color: rgb(244 67 54 / 20%);
+}
+.files-page .files-stats .box i.orange {
+    background-color: rgb(245 158 11 / 20%);
+}
+.files-page .files-stats .box > span {
+    margin-left: auto;
+}
+.files-page .files-stats a {
+    padding: 10px 15px;
+    margin: 20px auto 0;
+    transition: var(--main-transition);
+}
+.files-page .files-stats a:hover {
+    background-color: var(--blue-alt-color);
+}
+.files-page .files-stats a:hover i {
+    animation: up-and-down 0.8s infinite ;
+}
+.files-page .files-content {
+    grid-template-columns: repeat(auto-fill, minmax(200px , 1fr));
+}
+@media (min-width:768px) {
+    .files-page .files-content .file {
+        transition: var(--main-transition);
+    }
+    .files-page .files-content .file:hover {
+        transform: scale(1.017);
+    }    
+}
+.files-page .files-content .file i {
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.files-page .files-content .file i:hover {
+    color: black;
+}
+.files-page .files-content .file .icon img {
+    width: 64px;
+    height: 64px;
+    transition: var(--main-transition);
+}
+.files-page .files-content .file:hover .icon img {
+    transform: rotate(5deg);
+}
+/* End Files */
 /* Start Animation */
 @keyframes change-color {
     0% {
@@ -914,6 +1109,14 @@ ul {
     }
     100% {
         background-color: white;
+    }
+}
+@keyframes up-and-down {
+    0% , 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
     }
 }
 /* End Animation */

@@ -229,6 +229,9 @@
 .border-1-ccc {
     border: 1px solid #ccc;
 }
+.border-1-eee {
+    border: 1px solid #eee;
+}
 .border-2-eee {
     border: 2px solid #eee;
 }
@@ -242,6 +245,11 @@
     border: none;
 }
 /* End Border */
+/* Start View */
+.hide-overflow {
+    overflow: hidden;
+}
+/* End View */
 /* Start Component */
 .flex-center {
     display: flex;
@@ -256,6 +264,11 @@
 .btn-shape {
     padding: 4px 10px;
     border-radius: 6px;
+}
+.box-shadow {
+    -moz-box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    -webkit-box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
 }
 /* End Component */
 
