@@ -136,6 +136,20 @@ ul {
     top: -5px;
     right: -5px;
 }
+.head .icons .notification i {
+    cursor: pointer;
+    animation-name: bell-move;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+.head .icons .notification i:hover {
+    animation-play-state: running;
+}
+.head .icons img {
+    cursor: pointer;
+}
 .head .icons img {
     width: 32px;
     height: 32px;
@@ -1102,6 +1116,54 @@ ul {
     transform: rotate(5deg);
 }
 /* End Files */
+/* Start Plans*/
+.plans-page {
+    grid-template-columns: repeat(auto-fill , minmax(450px , 1fr));
+}
+@media (max-width:767px) {
+    .plans-page {
+        grid-template-columns: minmax(200px , 1fr);
+        margin: 10px;
+        gap: 10px;
+    }
+
+}
+.plans-page .plan .top {
+    border: 3px solid white;
+    outline-width: 3px;
+    outline-style: solid;
+}
+.plans-page .plan .top.green {
+    outline-color: var(--green-color);
+}
+.plans-page .plan .top.blue {
+    outline-color: var(--blue-color);
+}
+.plans-page .plan .top.orange {
+    outline-color: var(--orange-color);
+}
+.plans-page .plan .top div {
+    margin: auto;
+}
+.plans-page .plan .top div span:first-of-type {
+    left: -20px;
+    top: 0;
+}
+.plans-page .plan .top div span:last-of-type {
+    font-size: 40px;
+}
+.plans-page .plan > a {
+    border-radius: 6px;
+    padding: 7px 10px;
+    transition: var(--main-transition);
+}
+.plans-page .plan > a.green:hover {
+    background-color: #1ead52;
+}
+.plans-page .plan > a.blue:hover {
+    background: var(--blue-alt-color);
+}
+/* End Plans */
 /* Start Animation */
 @keyframes change-color {
     0% {
@@ -1117,6 +1179,20 @@ ul {
     }
     50% {
         transform: translateY(-3px);
+    }
+}
+@keyframes bell-move {
+    0% , 100% {
+        transform-origin: top center;
+        transform: rotate(0deg);
+    }
+    33% {
+        transform-origin: top center;
+        transform: rotate(5deg);
+    }
+    66% {
+        transform-origin: top center;
+        transform: rotate(-5deg);  
     }
 }
 /* End Animation */
