@@ -1152,6 +1152,9 @@ ul {
 .plans-page .plan .top div span:last-of-type {
     font-size: 40px;
 }
+.plans-page .plan ul li > i {
+    cursor: pointer;
+}
 .plans-page .plan > a {
     border-radius: 6px;
     padding: 7px 10px;
@@ -1165,6 +1168,20 @@ ul {
 }
 /* End Plans */
 /* Start Animation */
+@keyframes bell-move {
+    0% , 100% {
+        transform-origin: top center;
+        transform: rotate(0deg);
+    }
+    33% {
+        transform-origin: top center;
+        transform: rotate(5deg);
+    }
+    66% {
+        transform-origin: top center;
+        transform: rotate(-5deg);  
+    }
+}
 @keyframes change-color {
     0% {
         background-color: var(--blue-color);
@@ -1179,20 +1196,6 @@ ul {
     }
     50% {
         transform: translateY(-3px);
-    }
-}
-@keyframes bell-move {
-    0% , 100% {
-        transform-origin: top center;
-        transform: rotate(0deg);
-    }
-    33% {
-        transform-origin: top center;
-        transform: rotate(5deg);
-    }
-    66% {
-        transform-origin: top center;
-        transform: rotate(-5deg);  
     }
 }
 /* End Animation */
